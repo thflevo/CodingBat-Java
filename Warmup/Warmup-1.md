@@ -1,50 +1,5 @@
-# Warmup-1
 
 
-### Monkey Trouble (Boolean) 
-
-> We have two monkeys, a and b, and the parameters aSmile and bSmile indicate if each is smiling. We are in trouble if they are both smiling or if neither of them is smiling. Return true if we are in trouble.
-> * monkeyTrouble(true, true) → true
-> * monkeyTrouble(false, false) → true
-> * monkeyTrouble(true, false) → false
-
-```java
-public boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
-  return (aSmile == bSmile);
-}
-```
-Because the end result is always going to be either __true__ or __false__ we don't actually have to have an 'if' statement. The statement inside is a boolean, so we can simplify the code to be just one line. 
-
-As for the logic behind the code, we are in trouble if they are *both* smiling or if *neither* of them is smiling. Thus, we can infer that when they are __equal__,  we are in trouble. They are both boolean values, thus when they are ==, we should return the value true. 
-
-The other way to do this of course would simply to code for both cases, as there are only two options in this case. Something like ((aSmile && bSmile) || (!aSmile && !bSmile)) 
-
-
-### Makes10 (Boolean)
-
-> Given 2 ints, a and b, return true if one if them is 10 or if their sum is 10.
-> * makes10(9, 10) → true 
-> * makes10(9, 9) → false
-> * makes10(1, 9) → true
-
-```java
-public boolean makes10(int a, int b) {
-  return (a == 10 || b == 10 || a+b == 10);
-}
-```
-
-Although this code and concept is rather simple, the biggest thing I learned was that __you can have multiple conditions within logical operators__, as long as you don't muck up the variable types (i.e. piping the end result of an || into an &&, which would leave a boolean with some other variable).
-
-So something like 
-
-```java
-a == 1 || b == 1 || c == 1  // Is fine
-
-x == (a || b) // would compare x to true or false, so unless x is also a boolean it would cause an error(?) 
-
-```
-
-Logically speaking, it should also be fine to have multiple && conditions (i.e. a && b && c...) but I have yet to confirm this.
 
 ### Near Hundred (Boolean)
 
